@@ -10,9 +10,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.Duration;
 import java.util.List;
 
-public class SearchTests {
+public class SeleniumSearchTests {
 
     @Test
     void successSearchTest() throws MalformedURLException, InterruptedException {
@@ -43,7 +44,7 @@ public class SearchTests {
 
         // Test case for the BrowserStack sample Android app.
         // If you have uploaded your app, update the test case here.
-        AndroidElement searchElement = (AndroidElement) new WebDriverWait(driver, 30).until(
+        AndroidElement searchElement = (AndroidElement) new WebDriverWait(driver, Duration.ofSeconds(30)).until(
                 ExpectedConditions.elementToBeClickable(
                         MobileBy.AccessibilityId("Search Wikipedia")));
         searchElement.click();
